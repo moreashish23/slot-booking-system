@@ -385,14 +385,41 @@ http://localhost:3000
 
 ---
 
-# Screens
+#  Application Screenshots
 
-- Register
-- Login
-- Slots
-- Book Slot
-- My Bookings
-- Cancel Booking
+##  Register Page
+
+![Register Page](./screenshots/register.png)
+
+---
+
+##  Login Page
+
+![Login Page](./screenshots/login.png)
+
+---
+
+##  Available Slots
+
+![Slots Page](./screenshots/slots.png)
+
+---
+
+##  Booking a Slot
+
+![Booking Success](./screenshots/bookingslots.png)
+
+---
+
+##  My Bookings
+
+![My Bookings](./screenshots/mybookings.png)
+
+---
+
+##  Cancel Booking
+
+![Cancel Booking](./screenshots/cancelbooking.png)
 
 ---
 
