@@ -36,8 +36,7 @@ export function useSlots(): UseSlotsResult {
     refreshSlots();
   }, [refreshSlots]);
 
-  // Returns true on success so callers can trigger toasts/refresh elsewhere.
-  // Guards against double-click / duplicate requests via pendingSlotId.
+  
   async function bookSlot(slotId: string): Promise<boolean> {
     if (pendingSlotId) return false;
 

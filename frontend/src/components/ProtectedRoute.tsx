@@ -20,7 +20,7 @@ export function ProtectedRoute({ children }: { children: ReactNode }) {
   }
 
   if (!isAuthenticated) {
-    // Redirect effect above is already in flight; render nothing meanwhile.
+   
     return null;
   }
 

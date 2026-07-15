@@ -13,10 +13,6 @@ function isAxiosApiError(
   );
 }
 
-/**
- * Extracts a single human-readable message from a failed request,
- * matching the backend's { success:false, message, errors? } shape.
- */
 export function getErrorMessage(error: unknown): string {
   if (isAxiosApiError(error)) {
     return error.response!.data.message || "Something went wrong";
@@ -25,10 +21,6 @@ export function getErrorMessage(error: unknown): string {
   return "Something went wrong";
 }
 
-/**
- * Extracts the full errors[] array (field-level validation messages)
- * when present, falling back to the top-level message.
- */
 export function getErrorMessages(error: unknown): string[] {
   if (isAxiosApiError(error)) {
     const data = error.response!.data;

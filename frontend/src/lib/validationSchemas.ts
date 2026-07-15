@@ -1,7 +1,6 @@
 import { z } from "zod";
 
-// Mirrors backend validators/authValidator.ts loginValidator:
-// email required + valid, password required + max 128 chars (no min on login)
+
 export const loginSchema = z.object({
   email: z
     .string()
@@ -16,8 +15,6 @@ export const loginSchema = z.object({
 
 export type LoginFormValues = z.infer<typeof loginSchema>;
 
-// Mirrors backend validators/authValidator.ts registerValidator:
-// name 2-50 chars, email required + valid + max 254, password 6-128 chars
 export const registerSchema = z.object({
   name: z
     .string()

@@ -36,9 +36,7 @@ export function SlotCard({ slot, isPending, onBook }: SlotCardProps) {
         {formatTimeRange(slot.startTime, slot.endTime)}
       </p>
 
-      {/* Signature element: capacity gauge — a visual readout of the
-          quantitative fact that actually drives every decision on this
-          card (can I book this or not), rather than a decorative badge. */}
+      
       <div className="mt-4">
         <div className="h-2 w-full overflow-hidden rounded-full bg-ink-100">
           <div

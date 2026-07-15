@@ -9,7 +9,6 @@ export const api: AxiosInstance = axios.create({
   },
 });
 
-// Attach Authorization: Bearer <token> automatically to every request
 api.interceptors.request.use((config) => {
   const token = getToken();
   if (token) {
@@ -18,9 +17,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Global 401 handling: clear auth state and redirect to /login.
-// Skips the auth endpoints themselves so a failed login attempt
-// doesn't bounce the user away from the login page.
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
