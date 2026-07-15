@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { ParamsDictionary } from "express-serve-static-core";
 import { asyncHandler } from "../utils/asyncHandler";
 import { ApiResponse } from "../utils/ApiResponse";
 import { ApiError } from "../utils/ApiError";
@@ -8,11 +9,11 @@ import {
   cancelBooking,
 } from "../services/bookingService";
 
-interface SlotIdParams {
+interface SlotIdParams extends ParamsDictionary {
   id: string;
 }
 
-interface BookingIdParams {
+interface BookingIdParams extends ParamsDictionary {
   id: string;
 }
 
