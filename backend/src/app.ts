@@ -10,22 +10,43 @@ import { errorMiddleware } from "./middlewares/errorMiddleware";
 
 const app: Application = express();
 
-// Core middlewares
-app.use(cors({ origin: true, credentials: true }));
+
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Base routes
+
 app.use("/api/health", healthRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/slots", slotRoutes);
 app.use("/api/bookings", bookingRoutes);
 
-// 404 handler (must come after all valid routes)
+
 app.use(notFoundMiddleware);
 
-// Global error handler (must be last)
+
 app.use(errorMiddleware);
 
 export default app;
