@@ -8,8 +8,16 @@ import {
   cancelBooking,
 } from "../services/bookingService";
 
+interface SlotIdParams {
+  id: string;
+}
+
+interface BookingIdParams {
+  id: string;
+}
+
 export const createBooking = asyncHandler(
-  async (req: Request, res: Response) => {
+  async (req: Request<SlotIdParams>, res: Response) => {
     const userId = req.user?.userId;
     const { id: slotId } = req.params;
 
@@ -38,7 +46,7 @@ export const listMyBookings = asyncHandler(
 );
 
 export const removeBooking = asyncHandler(
-  async (req: Request, res: Response) => {
+  async (req: Request<BookingIdParams>, res: Response) => {
     const userId = req.user?.userId;
     const { id: bookingId } = req.params;
 

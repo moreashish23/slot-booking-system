@@ -2,6 +2,7 @@ import { Schema, model, Document, Types } from "mongoose";
 import { BookingStatus } from "../constants/bookingConstants";
 
 export interface IBooking extends Document {
+  _id: Types.ObjectId;
   user: Types.ObjectId;
   slot: Types.ObjectId;
   status: BookingStatus;

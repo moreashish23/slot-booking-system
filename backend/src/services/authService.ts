@@ -41,12 +41,12 @@ export async function registerUser(
     password: hashedPassword,
   });
 
-  const token = signToken({ userId: user.id.toString() });
+  const token = signToken({ userId: user._id.toString() });
 
   return {
     token,
     user: {
-      id: user.id.toString(),
+      id: user._id.toString(),
       name: user.name,
       email: user.email,
     },

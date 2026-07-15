@@ -1,6 +1,7 @@
-import { Schema, model, Document } from "mongoose";
+import { Schema, model, Document, Types } from "mongoose";
 
 export interface ISlot extends Document {
+   _id: Types.ObjectId;
   title: string;
   date: Date;
   startTime: string;

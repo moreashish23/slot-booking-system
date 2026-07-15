@@ -13,7 +13,7 @@ interface SlotResponse {
 
 function toSlotResponse(slot: ISlot): SlotResponse {
   return {
-    id: slot.id.toString(),
+    id: slot._id.toString(),
     title: slot.title,
     date: slot.date,
     startTime: slot.startTime,
