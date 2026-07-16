@@ -1,4 +1,4 @@
-﻿# Slotline  Slot Booking System
+﻿# Slotline - Slot Booking System
 
 A full-stack Slot Booking System built using **Next.js (App Router)**, **TypeScript**, **Node.js**, **Express.js**, and **MongoDB**.
 
